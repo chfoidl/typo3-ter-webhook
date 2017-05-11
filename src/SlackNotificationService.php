@@ -2,7 +2,6 @@
 
 namespace Sethorax\TYPO3TERWebHook;
 
-
 class SlackNotificationService
 {
     protected $request;
@@ -10,11 +9,11 @@ class SlackNotificationService
     protected $config;
 
     public function __construct()
-    {       
+    {
         $this->config = ConfigUtility::getConfig()['notification']['slack'];
 
         $this->request = curl_init($this->config['webhook-url']);
-        curl_setopt($this->request, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($this->request, CURLOPT_CUSTOMREQUEST, 'POST');
         curl_setopt($this->request, CURLOPT_RETURNTRANSFER, true);
     }
 

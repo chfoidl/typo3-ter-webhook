@@ -2,7 +2,6 @@
 
 namespace Sethorax\TYPO3TERWebHook;
 
-
 class UploadService
 {
     protected $cloneUrl;
@@ -10,7 +9,6 @@ class UploadService
     protected $extKey;
 
     protected $tempDir;
-
 
     public function upload($cloneUrl, $extKey)
     {
@@ -22,7 +20,6 @@ class UploadService
         $this->uploadExtension();
         $this->cleanUp();
     }
-
 
     protected function cloneRepo()
     {
@@ -41,7 +38,6 @@ class UploadService
         $uploader = new \NamelessCoder\TYPO3RepositoryClient\Uploader();
         $uploader->upload($extDir, $username, $password, 'Automatic release built from GitHub. See the CHANGELOG.md file that is shipped with this release for details.');
     }
-
 
     protected function createTempDir()
     {

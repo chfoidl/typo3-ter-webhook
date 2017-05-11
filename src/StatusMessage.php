@@ -2,7 +2,6 @@
 
 namespace Sethorax\TYPO3TERWebHook;
 
-
 final class StatusMessage
 {
     const NO_EXTKEY = 'Extkey not set!';

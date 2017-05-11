@@ -4,7 +4,6 @@ namespace Sethorax\TYPO3TERWebHook;
 
 use Symfony\Component\HttpFoundation\Request;
 
-
 class WebhookListener
 {
     protected $extKey;
@@ -14,7 +13,7 @@ class WebhookListener
     protected $data;
 
     protected $request;
-    
+
     protected $jsonResponse;
 
     protected $uploadService;
@@ -53,7 +52,7 @@ class WebhookListener
     {
         try {
             $this->uploadService->upload($this->payload['repository']['clone_url'], $this->extKey);
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             $this->jsonResponse->sendError($e->getMessage());
 
             return false;
@@ -98,9 +97,9 @@ class WebhookListener
 
     protected function isValidHash()
     {
-        list ($algorithm, $hash) = explode('=', $this->request->server->get('HTTP_X_HUB_SIGNATURE'));
+        list($algorithm, $hash) = explode('=', $this->request->server->get('HTTP_X_HUB_SIGNATURE'));
         $calculatedHash = hash_hmac($algorithm, $this->data, ConfigUtility::getConfig()['authorization']['github']['secret']);
 
-        return ($calculatedHash === $hash);
+        return $calculatedHash === $hash;
     }
 }

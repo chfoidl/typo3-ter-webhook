@@ -4,12 +4,11 @@ namespace Sethorax\TYPO3TERWebHook;
 
 use Symfony\Component\HttpFoundation\Response;
 
-
 class JsonResponse
 {
     protected $response;
 
-    public function __construct(Response $response = NULL)
+    public function __construct(Response $response = null)
     {
         if (!isset($response)) {
             $response = new Response();
@@ -21,7 +20,7 @@ class JsonResponse
     public function sendError($data)
     {
         $this->response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR);
-        
+
         $this->sendResponse('error', $data);
     }
 
@@ -31,7 +30,6 @@ class JsonResponse
 
         $this->sendResponse('success', $data);
     }
-
 
     protected function sendResponse(string $type, $data)
     {

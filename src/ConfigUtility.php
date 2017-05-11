@@ -4,9 +4,8 @@ namespace Sethorax\TYPO3TERWebHook;
 
 use Symfony\Component\Yaml\Yaml;
 
-
 class ConfigUtility
-{    
+{
     public static function getConfig()
     {
         return Yaml::parse(file_get_contents(__DIR__ . '/../config.yml'));
