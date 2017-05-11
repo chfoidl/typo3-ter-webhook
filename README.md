@@ -3,6 +3,9 @@
 This is a simple GitHub Webhook Listener that automatically uploads a TYPO3 extension to the TER.  
 The extension is only uploaded to the TER if a tag has been associated with the push.
 
+[![Build Status](https://travis-ci.org/Sethorax/typo3-ter-webhook.svg?branch=master)](https://travis-ci.org/Sethorax/typo3-ter-webhook)
+[![StyleCI](https://styleci.io/repos/91013782/shield?branch=master)](https://styleci.io/repos/91013782)
+
 ## Installation
 
 To get started, simply run the following command:
