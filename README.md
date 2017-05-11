@@ -5,6 +5,7 @@ The extension is only uploaded to the TER if a tag has been associated with the 
 
 [![Build Status](https://travis-ci.org/Sethorax/typo3-ter-webhook.svg?branch=master)](https://travis-ci.org/Sethorax/typo3-ter-webhook)
 [![StyleCI](https://styleci.io/repos/91013782/shield?branch=master)](https://styleci.io/repos/91013782)
+[![Latest Stable Version](https://poser.pugx.org/sethorax/typo3-ter-webhook/v/stable)](https://packagist.org/packages/sethorax/typo3-ter-webhook)
 
 ## Installation
 
