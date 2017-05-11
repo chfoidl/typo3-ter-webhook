@@ -1,0 +1,20 @@
+language: php
+matrix:
+  fast_finish: true
+  include:
+  - php: 5.5
+  - php: 5.6
+  - php: 7.0
+  - php: 7.1
+sudo: false
+cache:
+  directories:
+  - $HOME/.composer/cache
+before_install:
+- composer self-update
+- composer --version
+script:
+- echo; echo "Running unit tests"; vendor/bin/phpunit --colors tests/unit
+notifications:
+  slack:
+    secure: kAMz2fYGGorN12BuC7N0qZZDpaJuhbAIUi/y1z0d5sM4LjjS+aQJ9JDCWkFTDMoXVj3Uc8P5Fg70VFDGRi2QDl2nQGuUSXiynS07a7UlxRWjgrILVtHObXepKqQ3q06GFoPQSr+W2eykyD1SqIjy1hLgCXP/sgUByByOfdaduxmG2054IMxIe5A/59tvaBvOHdjzLiQCovkAnHu++6QwhcGG/I/0ZF+9F1gf9DG2YRVietKniiGhNzKpE6bJ13Dkq1w1vaTXlLal9Yj1g0FH2a1GOekny8tVtVkVbQmTdV9GZKh3MNCZvR/k1aMudvZxd/SO5bD1dcd1e4aZCOzydZ5Jm4Zq3MvtxvxTdxfmAkOyshAwjUY9LdI6zeYhwctXJPZdzK/USbHo96zOidOeNqYAtRzP/INeF5yFv6bEDCxfobcdw+VeeUmhP4wg+0GKpzgb+UlrgZNs3PgnPCQoACXRfu9CqE4URwyrIAHt4A55ZM/UpsKM3J3GFx8CKrs3uGUyj3Iwq8BHGh9H4MV4JI1OOlbZnwMTywvZ1wQogST23/WFKIX1bZ/Lubc9iQ3OaL2nBqtStNaf7Jt6cAykw+oNLczptopr89PIbSoPwP5C8Jdfi55q8AS3M27tnUuGdo32b9hc0ZfystSqxvd7s2SDH+MxmDfs058D6IB/tSU=

@@ -1,0 +1,30 @@
+{
+    "name": "sethorax/typo3-ter-webhook",
+    "description": "A GitHub Webhook to automatically upload to the TYPO3 Extension Repository.",
+    "type": "project",
+    "license": "GPL3",
+    "authors": [
+        {
+            "name": "Sethorax",
+            "email": "info@sethorax.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "namelesscoder/typo3-repository-client": "^2.0",
+        "symfony/yaml": "^3.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sethorax\\TYPO3TERWebHook\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sethorax\\TYPO3TERWebHook\\Tests\\Unit\\": "tests/unit/"
+        }
+    }
+}
