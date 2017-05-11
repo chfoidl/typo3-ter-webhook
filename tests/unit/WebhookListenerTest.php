@@ -15,7 +15,7 @@ class WebhookListenerTest extends TestCase
 {
     protected $configPath;
 
-    protected $existingConfig = false;
+    protected $configBackupPath;
 
     protected $mockedResponse;
 
@@ -29,10 +29,12 @@ class WebhookListenerTest extends TestCase
     {
         $this->configPath = __DIR__ . '/../../config.yml';
 
-        $bakFile = str_replace('config.yml', 'config.yml.bak', $this->configPath);
-        rename($this->configPath, $bakFile);
+        if (file_exists($this->configPath)) {
+            $this->configBackupPath = str_replace('config.yml', 'config.yml.bak', $this->configPath);
+            rename($this->configPath, $this->configBackupPath);
+        }
+
         copy(__DIR__ . '/../fixtures/config.yml', $this->configPath);
-        $this->configPath = $bakFile;
 
         $this->mockedResponse = $this->getMockBuilder(JsonResponse::class)
             ->disableOriginalConstructor()
@@ -65,7 +67,7 @@ class WebhookListenerTest extends TestCase
 
     public function tearDown()
     {
-        rename($this->configPath, str_replace('config.yml.bak', 'config.yml', $this->configPath));
+        rename($this->configBackupPath, str_replace('config.yml.bak', 'config.yml', $this->configBackupPath));
     }
 
     public function testEmtpyRequest()
