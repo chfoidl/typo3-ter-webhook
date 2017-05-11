@@ -67,7 +67,11 @@ class WebhookListenerTest extends TestCase
 
     public function tearDown()
     {
-        rename($this->configBackupPath, str_replace('config.yml.bak', 'config.yml', $this->configBackupPath));
+        if (file_exists($this->configBackupPath)) {
+            rename($this->configBackupPath, str_replace('config.yml.bak', 'config.yml', $this->configBackupPath));
+        } else {
+            unlink($this->configPath);
+        }
     }
 
     public function testEmtpyRequest()
