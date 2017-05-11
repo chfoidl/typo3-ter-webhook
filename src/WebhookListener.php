@@ -20,7 +20,6 @@ class WebhookListener
 
     protected $slackNotificationService;
 
-
     public function __construct(JsonResponse $jsonResponse, Request $request, UploadService $uploadService, SlackNotificationService $slackNotificationService, string $data)
     {
         $this->data = $data;
