@@ -1,0 +1,10 @@
+authorization:
+    github:
+        secret: SuperSecret
+    typo3:
+        username: johndoe
+        password: password
+
+notification:
+    slack:
+        webhook-url: https://hooks.slack.com/services/XXXXXXXX
