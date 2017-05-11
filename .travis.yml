@@ -12,6 +12,7 @@ cache:
   - $HOME/.composer/cache
 before_install:
 - composer self-update
+- composer install
 - composer --version
 script:
 - echo; echo "Running unit tests"; vendor/bin/phpunit --colors tests/unit
