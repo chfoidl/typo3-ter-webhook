@@ -2,7 +2,7 @@
     "name": "sethorax/typo3-ter-webhook",
     "description": "A GitHub Webhook to automatically upload to the TYPO3 Extension Repository.",
     "type": "project",
-    "license": "GPL3",
+    "version": "0.9.0",
     "authors": [
         {
             "name": "Sethorax",
