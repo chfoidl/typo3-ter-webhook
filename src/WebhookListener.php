@@ -36,7 +36,6 @@ class WebhookListener
 
         if (ConfigUtility::validateConfig()) {
             if ($this->isValidRequest() && $this->pushHasTag()) {
-                $this->slackNotificationService->send('Extension *' . $this->extKey . '* from repository *' . $this->payload['repository']['full_name'] . '@' . explode('/', $this->payload['ref'])[2] . '* \nsucessfully uploaded to the <https://typo3.org/extensions/repository/view/' . $this->extKey . '|TYPO3 TER> by ' . $this->payload['head_commit']['author']['username'] . '.');
                 if ($this->uploadExtension()) {
                     $this->slackNotificationService->send('Extension *' . $this->extKey . '* from repository *' . $this->payload['repository']['full_name'] . '@' . explode('/', $this->payload['ref'])[2] . '* \nsucessfully uploaded to the <https://typo3.org/extensions/repository/view/' . $this->extKey . '|TYPO3 TER> by ' . $this->payload['head_commit']['author']['username'] . '.');
                     $this->jsonResponse->sendSuccess(StatusMessage::EXT_UPLOADED);
